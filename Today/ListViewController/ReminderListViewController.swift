@@ -20,6 +20,7 @@ class ReminderListViewController: UICollectionViewController {
         let listLayout = listLayout() //메서드에서 새로운 list layout을 만듬
         collectionView.collectionViewLayout = listLayout //collection view layout에 list layout을 할당
         
+        let cellRegistration = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
         let cellRegistration = UICollectionView.CellRegistration {  //새로운 CellRegistration 생성
             (cell: UICollectionViewListCell, indexPath: IndexPath, itemIdentifier: String) in
             let reminder = Reminder.sampleData[indexPath.item]
