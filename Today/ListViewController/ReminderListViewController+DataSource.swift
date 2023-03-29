@@ -15,6 +15,9 @@ extension ReminderListViewController {
         let reminder = Reminder.sampleData[indexPath.item]
         var contentConfiguration = cell.defaultContentConfiguration()
         contentConfiguration.text = reminder.title
+        contentConfiguration.secondaryText = reminder.dueDate.dayAndTimeText
+        contentConfiguration.secondaryTextProperties.font = UIFont.preferredFont(
+            forTextStyle: .caption1)
         cell.contentConfiguration = contentConfiguration
         //ReminderListViewController.swift의 셀 등록 클로저에서 내용을 추출하여 ReminderListViewController+Data의 새 메서드에 삽입합니다
     }
